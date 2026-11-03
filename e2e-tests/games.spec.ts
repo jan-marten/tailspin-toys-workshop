@@ -24,6 +24,12 @@ test.describe('Game Listing and Navigation', () => {
     });
   });
 
+  test('should show "No rating yet" on cards for unrated games', async ({ page }) => {
+    await page.goto('/');
+    const rating = page.getByTestId('game-card').first().getByTestId('game-card-rating');
+    await expect(rating).toHaveText(/^(No rating yet|\d\.\d \/ 5)$/);
+  });
+
   test('should navigate to correct game details page when clicking on a game', async ({ page }) => {
     let gameId: string | null;
     let gameTitle: string | null;
