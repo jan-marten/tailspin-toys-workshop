@@ -92,11 +92,11 @@ The application lives at the repository root:
 
 - `db/`: Drizzle schema, migrations, transforms, seed, and `games.csv`
 - `src/lib/`: Node SQLite client (`db.ts`) and data-access helpers (`games.ts`)
-- `src/components/`: reusable `.astro` components
+- `src/components/`: reusable `.astro` components (including `GameFilters.astro`, the category/publisher filter form used by `index.astro`; filter state syncs to the URL query string via a scoped script)
 - `src/layouts/`: Astro layout templates
 - `src/pages/`: Astro page routes (`index.astro` listing, `game/[id].astro`, `404.astro`, `about.astro`)
 - `src/styles/`: CSS and Tailwind configuration
 - `src/types/`: TypeScript interfaces (Game, Publisher, Category)
-- `e2e-tests/`: Playwright E2E tests (home, games, accessibility)
+- `e2e-tests/`: Playwright E2E tests (home, games, filters, accessibility)
 - `drizzle.config.ts`, `vitest.config.ts`, `astro.config.mjs`, `playwright.config.ts`: tooling config
 - `README.md`: Project documentation
